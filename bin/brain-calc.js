@@ -16,7 +16,8 @@ const func = () => {
     console.log('Correct!');
   } else {
     console.log(`'${youAnswer}' is wrong answer ;(. Correct answer was ${answer}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
   const numb = getRandomNumber();
   const numbs = getRandomNumber();
@@ -27,7 +28,8 @@ const func = () => {
     console.log('Correct!');
   } else {
     console.log(`'${youAnswer1}' is wrong answer ;(. Correct answer was ${answers}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
   const num = getRandomNumber();
   const nums = getRandomNumber();
@@ -38,8 +40,9 @@ const func = () => {
     console.log('Correct!');
   } else {
     console.log(`'${youAnswer2}' is wrong answer ;(. Correct answer was ${ans}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
 };
 func();
