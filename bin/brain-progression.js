@@ -39,8 +39,8 @@ const func = () => {
     console.log(`Question: ${vvod[0]}
 Your answer: ${userAnswer}
 '${userAnswer}' is wrong answer ;(. Correct answer was ${vvod[1]}.`);
-  console.log(`Let's try again, ${name}!`);
-  return '0'; 
+    console.log(`Let's try again, ${name}!`);
+    return '0';
   }
   console.log('Correct!');
   return '1';
@@ -48,7 +48,7 @@ Your answer: ${userAnswer}
 
 for (let i = 0; i < 3; i += 1) {
   results = func();
-  if (results === `0`) {
+  if (results === '0') {
     break;
   }
   if (i === 2) {
