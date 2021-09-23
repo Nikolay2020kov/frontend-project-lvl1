@@ -25,7 +25,8 @@ const func = () => {
     console.log(`Question: ${number} ${numbers} 
 Your answer: ${youAnswer} 
 '${youAnswer}' is wrong answer ;(. Correct answer was ${answer}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
   const numb = getRandomNumber();
   const numbs = getRandomNumber();
@@ -38,7 +39,8 @@ Your answer: ${youAnswer}
     console.log(`Question: ${numb} ${numbs}
 Your answer: ${youAnswer1}
 '${youAnswer1}' is wrong answer ;(. Correct answer was ${answers}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
   const num = getRandomNumber();
   const nums = getRandomNumber();
@@ -51,8 +53,9 @@ Your answer: ${youAnswer1}
     console.log(`Question: ${num} ${nums}
 Your answer: ${youAnswer2}
 '${youAnswer2}' is wrong answer ;(. Correct answer was ${ans}.`);
-    return `Let's try again, ${name}!`;
+    console.log(`Let's try again, ${name}!`);
+    return;
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
 };
 func();
