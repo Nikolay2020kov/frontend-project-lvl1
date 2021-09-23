@@ -36,13 +36,13 @@ const func = () => {
   console.log(`Question: ${vvod[0]}`);
   const userAnswer = Number(readlineSync.question('You answer: '));
   if (userAnswer !== vvod[1]) {
-      console.log(`Question: ${vvod[0]}
+    console.log(`Question: ${vvod[0]}
 Your answer: ${userAnswer}
 '${userAnswer}' is wrong answer ;(. Correct answer was ${vvod[1]}.`);
     return `Let's try again, ${name}!`;
-  } else {
-    console.log('Correct!');
   }
+  console.log('Correct!');
+  return '0';
 };
 
 for (let i = 0; i < 3; i += 1) {
@@ -50,7 +50,7 @@ for (let i = 0; i < 3; i += 1) {
   if (results === `Let's try again, ${name}!`) {
     break;
   }
-  if(i == 2){
-   console.log(`Congratulations, ${name}!`);
+  if (i === 2) {
+    console.log(`Congratulations, ${name}!`);
   }
 }
