@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
+let results;
 const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const generateProgression = (progressionStep, progressionSize, firstElement, hiddenIndex) => {
   const progresionArray = [];
   progresionArray.push(firstElement);
-  for (let i = 1; i < progressionSize; i = i + 1) {
+  for (let i = 1; i < progressionSize; i += 1) {
     const progressionEl = firstElement + progressionStep * i;
     progresionArray.push(progressionEl);
   }
@@ -28,23 +29,28 @@ const generateRound = () => {
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name?: ');
 console.log(`Hello, ${name}!`);
+console.log('What number is missing in the progression?');
 
 const func = () => {
   const vvod = generateRound();
-  console.log('What number is missing in the progression?');
-  console.log(`Question: ${vvod[0]}`);;
+  console.log(`Question: ${vvod[0]}`);
   const userAnswer = Number(readlineSync.question('You answer: '));
-  if (userAnswer === vvod[1]) {
-    console.log('Correct!');
-  } else {
-    console.log(`Question: ${vvod[0]}  
-Your answer: ${userAnswer} 
+  if (userAnswer !== vvod[1]) {
+      console.log(`Question: ${vvod[0]}
+Your answer: ${userAnswer}
 '${userAnswer}' is wrong answer ;(. Correct answer was ${vvod[1]}.`);
     return `Let's try again, ${name}!`;
+  } else {
+    console.log('Correct!');
   }
-  return `Congratulations, ${name}!`;
 };
 
 for (let i = 0; i < 3; i += 1) {
-  func();
+  results = func();
+  if (results === `Let's try again, ${name}!`) {
+    break;
+  }
+  if(i == 2){
+   console.log(`Congratulations, ${name}!`);
+  }
 }
